@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  timescale:
+    image: timescale/timescaledb:latest-pg12
+    container_name: timescale
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: $TIMESCALE_ADMIN_USER
+      POSTGRES_PASSWORD: $TIMESCALE_ADMIN_PASSWORD
+      PGDATA: /data/postgres
+    volumes:
+       - timescale_data:/data/postgres
+
+    network_mode: bridge
+    ports:
+      - "5433:5432"
+
+volumes:
+  timescale_data:
