@@ -18,6 +18,6 @@ docker-compose -p timescale-stack -f timescale-compose.yaml up -d --build
 Create database
 
 ```bash
-docker exec -it postgres su postgres -c "psql -U $POSTGRES_ADMIN_USER -c 'create database sample_database_name;'"
-docker exec -it timescale su postgres -c "psql -U $TIMESCALE_ADMIN_USER -c 'create database sample_database_name;'"
+docker exec postgres su postgres -c "psql -U $POSTGRES_ADMIN_USER -c 'create database sample_database_name;'"
+docker exec timescale su postgres -c "psql -U $TIMESCALE_ADMIN_USER -c 'create database sample_database_name;'"
 ```
