@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     parameters {
-        string(name: 'DATABASE_NAME', defaultValue: 'default', description: 'Name of the database to create')
+        string(name: 'DATABASE_NAME', defaultValue: 'postgres', description: 'Name of the database to create')
     }
 
     stages {
